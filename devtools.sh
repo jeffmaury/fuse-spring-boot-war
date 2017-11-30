@@ -12,9 +12,9 @@ if [ ${nr_jars} = 1 ]; then
     if [[ "${main_class}" =~ org.springframework.boot.loader. ]]; then
       # explosion!!!
       echo "SpringBoot executable jar detected, exploding..."
-      unzip -q "${single_jar}"
+      unzip "${single_jar}"
       # remove fat jar, run script will setup main class, etc. for run-java.sh
-      rm "${single_jar}"
+      rm -v "${single_jar}"
     fi
   fi
 fi
